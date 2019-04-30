@@ -4,6 +4,7 @@
 #include "stdio.h"
 #include "string.h"
 #include "strings.h"
+#include<bits/stdc++.h>
 
 using namespace std;
 
@@ -11,14 +12,14 @@ void mostrarAllDados(string celular,string email,string nome, double deposito, d
     cout << "\nDados: " << nome << ", " << idade << " anos.";
     cout << "\nEmail: " << email;
     cout << "\nContato: " << celular;
-    cout << "\nValor do ultimo depósito: " << deposito;
+    cout << "\nValor do ultimo deposito: " << deposito;
     cout << "\nValor do ultimo saque: " << saque;
 
 }
 
 banco::banco()
 {
-    bool flag;
+    bool flag=false;
     int saida;
     int escolha, idade;
     double saldo=0, saque=0, deposito=0;
@@ -39,10 +40,9 @@ banco::banco()
             {
               cout << "\nBem-vindo convidado.\nEh um prazer ter sua visita em nosso Banco.\nVamos fazer seu cadastro okay?\nSo preciso de algumas informacoeszinhas. :D";
 
-
-              cout << "\n\nDigite o seu primeiro nome:\n";
-              cin >> nome;
-
+              cout << "\n\nDigite o seu nome:\n";
+              cin.ignore();
+              getline(cin, nome);
 
               cout << "\nDigite a sua idade:\n";
               cin >> idade;
@@ -50,7 +50,7 @@ banco::banco()
               if (idade < 18)
               {
                 cout << "\nWait... this is illegal..";
-                cout << "\nSystem crashed 404";
+                cout << "\nSystem crashed 404\n";
                 exit(0);
               }
               else
@@ -62,7 +62,7 @@ banco::banco()
                 cin >> celular;
               }
 
-            cout << "\nCadastro concluido com sucesso :D";
+            cout << "\nCadastro concluido com sucesso :D\n";
             cout << "\nSeja bem-vindo " << nome << ".";
 
             mostrarAllDados(celular, email, nome, deposito, saque, idade);
