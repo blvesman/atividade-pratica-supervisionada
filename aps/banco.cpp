@@ -8,7 +8,40 @@
 
 using namespace std;
 
-void mostrarAllDados(string celular,string email,string nome, double deposito, double saque, int idade){
+bool flag=false;
+int escolha, idade, saida, escolhaEdit;
+double saldo=0, saque=0, deposito=0;
+string celular, email, nome;
+
+void cadastrarUsuario()
+{
+    cout << "\n\nDigite o seu nome:\n";
+    cin.ignore();
+    getline(cin, nome);
+
+    cout << "\nDigite a sua idade:\n";
+    cin >> idade;
+
+    if (idade < 18)
+    {
+      cout << "\nWait... this is illegal..";
+      cout << "\nSystem crashed 404\n";
+      exit(0);
+    }
+    else
+    {
+      cout << "\nDigite o seu endereco email:\n";
+      cin >> email;
+
+      cout << "\nDigite o numero do seu celular:\n";
+      cin >> celular;
+    }
+
+    cout << "\n\nCadastro concluido com sucesso :D\n\n";
+    cout << "\nSeja bem-vindo " << nome << ".\n";
+}
+
+void mostrarAllDados(){
     cout << "\nDados: " << nome << ", " << idade << " anos.";
     cout << "\nEmail: " << email;
     cout << "\nContato: " << celular;
@@ -17,13 +50,21 @@ void mostrarAllDados(string celular,string email,string nome, double deposito, d
 
 }
 
+void editarDados()
+{
+    cout << "\nDigite a sua nova idade:\n";
+    cin >> idade;
+
+    cout << "\nDigite o seu novo endereco email:\n";
+    cin >> email;
+
+    cout << "\nDigite o seu novo numero do seu celular:\n";
+    cin >> celular;
+}
+
 banco::banco()
 {
-    bool flag=false;
-    int saida;
-    int escolha, idade;
-    double saldo=0, saque=0, deposito=0;
-    string celular, email, nome;
+
     cout << "\nSeja bem-vindo ao Banco C++\n";
 
     while(!flag)
@@ -38,38 +79,13 @@ banco::banco()
 
             if (nome == "")
             {
-              cout << "\nBem-vindo convidado.\nEh um prazer ter sua visita em nosso Banco.\nVamos fazer seu cadastro okay?\nSo preciso de algumas informacoeszinhas. :D";
+                cout << "\nBem-vindo convidado.\nEh um prazer ter sua visita em nosso Banco.\nVamos fazer seu cadastro okay?\nSo preciso de algumas informacoeszinhas. :D";
 
-              cout << "\n\nDigite o seu nome:\n";
-              cin.ignore();
-              getline(cin, nome);
-
-              cout << "\nDigite a sua idade:\n";
-              cin >> idade;
-
-              if (idade < 18)
-              {
-                cout << "\nWait... this is illegal..";
-                cout << "\nSystem crashed 404\n";
-                exit(0);
-              }
-              else
-              {
-                cout << "\nDigite o seu endereco email:\n";
-                cin >> email;
-
-                cout << "\nDigite o numero do seu celular:\n";
-                cin >> celular;
-              }
-
-            cout << "\nCadastro concluido com sucesso :D\n";
-            cout << "\nSeja bem-vindo " << nome << ".";
-
-            mostrarAllDados(celular, email, nome, deposito, saque, idade);
+                cadastrarUsuario();
+                mostrarAllDados();
             }
             else
             {
-              int escolhaEdit;
 
               cout << "\nVoce ja esta cadastrado, " << nome << ".";
               cout << "\nGostaria de alterar seus dados?(1 - Sim / 2 - Nao)\n";
@@ -77,21 +93,12 @@ banco::banco()
 
               if (escolhaEdit == 1)
               {
-
-                cout << "\nDigite a sua nova idade:\n";
-                cin >> idade;
-
-                cout << "\nDigite o seu novo endereco email:\n";
-                cin >> email;
-
-                cout << "\nDigite o seu novo numero do seu celular:\n";
-                cin >> celular;
-
-                mostrarAllDados(celular, email, nome, deposito, saque, idade);
+                editarDados();
+                mostrarAllDados();
               }
               else
               {
-                cout << "\nOkay.";
+                cout << "\nSuave meu bom.";
               }
             }
 
@@ -122,7 +129,15 @@ banco::banco()
               }
             }
           } else {
-            cout << "Usuario nao cadastrado";
+            cout << "Usuario nao cadastrado\n\nDeseja se cadastrar? (1 - Sim/2 - Não)\n";
+            cin >> escolhaEdit;
+
+            if (escolhaEdit == 1)
+            {
+                cadastrarUsuario();
+            } else {
+                cout << "Taokei chefe";
+            }
           }
 
           break;
@@ -135,7 +150,15 @@ banco::banco()
               cout << "\nFaca um deposito :D";
             }
           } else {
-            cout << "Usuario nao cadastrado";
+              cout << "Usuario nao cadastrado\n\nDeseja se cadastrar? (1 - Sim/2 - Não)\n";
+              cin >> escolhaEdit;
+
+              if (escolhaEdit == 1)
+              {
+                  cadastrarUsuario();
+              } else {
+                  cout << "Taokei chefe";
+              }
           }
           break;
 
@@ -149,7 +172,15 @@ banco::banco()
 
             cout << "\nFoi depositado: " << deposito << "R$\nSaldo atual: " << saldo << "R$";
           } else {
-            cout << "Usuario nao cadastrado";
+              cout << "Usuario nao cadastrado\n\nDeseja se cadastrar? (1 - Sim/2 - Não)\n";
+              cin >> escolhaEdit;
+
+              if (escolhaEdit == 1)
+              {
+                  cadastrarUsuario();
+              } else {
+                  cout << "Taokei chefe";
+              }
           }
 
           break;
@@ -157,9 +188,17 @@ banco::banco()
         //Consultar informacoes
         case 5:
           if (nome != "") {
-            mostrarAllDados(celular, email, nome, deposito, saque, idade);
+            mostrarAllDados();
           } else {
-            cout << "\nUsuario nao cadastrado";
+              cout << "Usuario nao cadastrado\n\nDeseja se cadastrar? (1 - Sim/2 - Não)\n";
+              cin >> escolhaEdit;
+
+              if (escolhaEdit == 1)
+              {
+                  cadastrarUsuario();
+              } else {
+                  cout << "Taokei chefe";
+              }
           }
           break;
       }
