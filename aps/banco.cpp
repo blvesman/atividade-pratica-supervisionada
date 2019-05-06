@@ -111,6 +111,7 @@ banco::banco()
             if (saldo == 0)
             {
               cout << "\nVoce nao tem saldo na sua conta D:\n";
+              cout << "\nFaca um deposito :D";
             }
             else
             {
