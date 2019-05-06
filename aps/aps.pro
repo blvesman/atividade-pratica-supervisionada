@@ -5,11 +5,13 @@ CONFIG -= qt
 
 SOURCES += \
         banco.cpp \
+        extenso.cpp \
         fatoracao.cpp \
         fibonacci.cpp \
         main.cpp
 
 HEADERS += \
     banco.h \
+    extenso.h \
     fatoracao.h \
     fibonacci.h

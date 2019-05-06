@@ -24,7 +24,7 @@ void cadastrarUsuario()
 
     if (idade < 18)
     {
-      cout << "\nWait... this is illegal..";
+      cout << "\nWait. That's illegal.";
       cout << "\nSystem crashed 404\n";
       exit(0);
     }

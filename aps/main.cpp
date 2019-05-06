@@ -2,6 +2,7 @@
 #include "banco.h"
 #include "fatoracao.h"
 #include "fibonacci.h"
+#include "extenso.h"
 
 using namespace std;
 
@@ -33,6 +34,11 @@ int main()
 
           case 3:
             banco();
+            cout << "\n=============================================";
+          break;
+
+          case 4:
+            extenso();
             cout << "\n=============================================";
           break;
 
