@@ -122,7 +122,8 @@ extenso::extenso()
         } else {
             cout << "\n" << ExCentena[C] << " E " << ExDezena[D] << " E " << ExUnidade[U];
         }
+    } else {
+    cout << "Numero muito grande.";
     }
-
 
 }
