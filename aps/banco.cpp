@@ -204,7 +204,7 @@ banco::banco()
           break;
       }
 
-      cout << "\n\nDeseja sair do Banco C++? O banco sempre com voce.(1 - Sim/2 - Nao)\n";
+      cout << "\n\nDeseja sair do Banco C++? O banco sempre com voce.(1 - Sim/2 - Nao)\n\n/*Nota.: Ao selecionar nao, voce volta ao menu do Banco*/\n";
       cin >> saida;
 
       switch(saida){

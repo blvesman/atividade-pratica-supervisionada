@@ -48,13 +48,17 @@ int main()
             break;
         }
 
-        cout << "\n\nDeseja encerrar o script? (1 - Sim/2 - Nao)\n";
+        cout << "\n\nDeseja encerrar o script? (1 - Sim/2 - Nao)\n\n/*Nota.: Ao selecionar nao, voce volta ao menu inical*/\n";
         cin >> sair;
 
         switch(sair)
         {
           case 1:
             flag = true;
+            cout << "\n\n\n\n\n -------CREDITOS----->\n\n\n\nDesenvolvido por.:\n\nWilliam Nunes - RA: 1501579\n"
+                    "Luccas Souza - RA: 3291445\n"
+                    "Mariana Ribeiro - RA: 3458456\n"
+                    "Fábio Lima - RA: 3205177\n\n\n\n -------FINISH-------->\n\n\n";
             break;
 
           case 2:
@@ -66,5 +70,7 @@ int main()
             exit(0);
             break;
         }
+
+
     }
 }
