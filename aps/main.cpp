@@ -15,7 +15,7 @@ int main()
     {
         int escolha;
 
-        cout << "\nEscolha qual atividade da APS quer testar: \n" <<"\n1 -> Calcularar fatoracao\n2 -> Sequencia Fibonacci\n3 -> Banco C++\n4 -> Numero por extenso\n\nDigite um numero respectivo ao exercicio e aperte ENTER\n\n";
+        cout << "\nEscolha qual atividade da APS quer testar: \n" <<"\n1 -> Calcularar fatorial\n2 -> Sequencia Fibonacci\n3 -> Banco C++\n4 -> Numero por extenso\n\nDigite um numero respectivo ao exercicio e aperte ENTER\n\n";
         cin >> escolha;
 
         cout << "\n=============================================";

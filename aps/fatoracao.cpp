@@ -10,7 +10,7 @@ fatoracao::fatoracao()
     int n=0, resultado=0;
       string equacao;
 
-      cout << "\nScript de fatoracao\n\nDigite um numero e iremos lhe mostrar o resultado dele fatorado:\n";
+      cout << "\nScript Calculo de fatorial\n\nDigite um numero e iremos lhe mostrar o resultado dele fatorado:\n";
       cin >> n;
 
       for(int i=1;i<n;i++){
@@ -20,6 +20,6 @@ fatoracao::fatoracao()
 
       }
 
-      cout << "\n!" << n << " eh: "<< resultado;
+      cout << "\n" << n << "! eh: "<< resultado;
       cout << "\n\nEquacao: " << equacao << to_string(n);
 }
